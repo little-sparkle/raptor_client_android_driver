@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">RaptorDriver</string>
+
+    <string name="tab_item_current">Current</string>
+    <string name="tab_item_me">Me</string>
+
+    <string name="map_mode">map</string>
+    <string name="order_mode">start</string>
+    <string name="shutdown_mode">stop</string>
+
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="online_hours">online:%1$s hours</string>
+    <string name="order_count">orders:%1$d</string>
+    <string name="sum">sum:%1$s</string>
+    <string name="bargain_rate">bargain rate:%1$d%%</string>
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">猛禽打车</string>
+
+    <string name="tab_item_current">当前</string>
+    <string name="tab_item_me">我</string>
+
+    <string name="map_mode">地图</string>
+    <string name="order_mode">出车</string>
+    <string name="shutdown_mode">收车</string>
+
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+
+    <string name="online_hours">在线:%1$s小时</string>
+    <string name="order_count">接单:%1$d</string>
+    <string name="sum">流水:%1$s</string>
+    <string name="bargain_rate">成交率:%1$d%%</string>
+</resources>
