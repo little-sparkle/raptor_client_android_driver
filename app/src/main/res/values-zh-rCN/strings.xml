@@ -22,4 +22,6 @@
     <string name="current_route_finished">已完成，待评价</string>
     <string name="current_route_paused">暂停中</string>
     <string name="today_history_route">今日历史行程</string>
+    <string name="map_mode_locate">定位模式</string>
+    <string name="map_mode_view">查看模式</string>
 </resources>

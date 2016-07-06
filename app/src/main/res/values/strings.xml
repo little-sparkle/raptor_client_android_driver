@@ -22,4 +22,6 @@
     <string name="current_route_finished">finished，waiting rate</string>
     <string name="current_route_paused">pausing</string>
     <string name="today_history_route">today history route</string>
+    <string name="map_mode_locate">locate mode</string>
+    <string name="map_mode_view">view mode</string>
 </resources>

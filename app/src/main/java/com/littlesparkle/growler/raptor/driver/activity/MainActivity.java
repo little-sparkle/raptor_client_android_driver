@@ -1,9 +1,11 @@
 package com.littlesparkle.growler.raptor.driver.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatButton;
 
+import com.amap.api.maps2d.model.LatLng;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.fragment.CurrentFragment;
 import com.littlesparkle.growler.raptor.driver.fragment.MeFragment;
@@ -29,7 +31,9 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.map_mode)
     public void onMapModeClick(AppCompatButton button) {
-        showDialogWithMessage(getString(R.string.map_mode));
+        Intent intent = new Intent(this, MapActivity.class);
+        intent.putExtra("passenger", new LatLng(39.979004, 116.508715));
+        startActivity(intent);
     }
 
     @BindView(R.id.order_mode)

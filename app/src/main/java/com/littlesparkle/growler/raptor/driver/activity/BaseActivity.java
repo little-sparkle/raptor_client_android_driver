@@ -1,5 +1,6 @@
 package com.littlesparkle.growler.raptor.driver.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -34,5 +35,10 @@ public class BaseActivity extends AppCompatActivity {
                 .setConfirmText(getString(R.string.ok))
                 .setConfirmClickListener(listener)
                 .show();
+    }
+
+    protected void startActivity(Class cls) {
+        Intent intent = new Intent(this, cls);
+        startActivity(intent);
     }
 }

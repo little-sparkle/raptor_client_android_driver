@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background_gradient"
+    tools:context=".activity.MapActivity">
+
+    <RelativeLayout
+        android:id="@+id/map_mode_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_map_titlebar_height">
+
+        <TextView
+            android:id="@+id/map_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/main_background_gradient"
+            android:gravity="center"
+            android:text="@string/map_mode"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/activity_map_titlebar_text_size" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/map_mode_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/map_mode_locate"
+            android:textColor="@color/text_secondary" />
+    </RelativeLayout>
+
+    <com.amap.api.maps2d.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/map_mode_title" />
+</RelativeLayout>

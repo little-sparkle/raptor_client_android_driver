@@ -19,4 +19,7 @@
     <dimen name="margin_normal">4dp</dimen>
     <dimen name="padding_normal">4dp</dimen>
     <dimen name="padding_divider">16dp</dimen>
+
+    <dimen name="activity_map_titlebar_height">60dp</dimen>
+    <dimen name="activity_map_titlebar_text_size">28sp</dimen>
 </resources>
