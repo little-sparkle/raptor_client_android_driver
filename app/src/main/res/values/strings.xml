@@ -24,4 +24,10 @@
     <string name="today_history_route">today history route</string>
     <string name="map_mode_locate">locate mode</string>
     <string name="map_mode_view">view mode</string>
+
+    <string name="performance_review">performance review</string>
+
+    <string name="bargain_rate_label">bargain rate</string>
+    <string name="rating_label">rating</string>
+    <string name="my_route_label">my route</string>
 </resources>

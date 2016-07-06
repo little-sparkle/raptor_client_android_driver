@@ -24,4 +24,10 @@
     <string name="today_history_route">今日历史行程</string>
     <string name="map_mode_locate">定位模式</string>
     <string name="map_mode_view">查看模式</string>
+
+    <string name="performance_review">成绩查询</string>
+
+    <string name="bargain_rate_label">成交率</string>
+    <string name="rating_label">评价星级</string>
+    <string name="my_route_label">我的行程</string>
 </resources>
