@@ -15,4 +15,11 @@
     <string name="order_count">orders:%1$d</string>
     <string name="sum">sum:%1$s</string>
     <string name="bargain_rate">bargain rate:%1$d%%</string>
+
+    <string name="current_route">current route: %1$s</string>
+    <string name="current_route_listening">listening</string>
+    <string name="current_route_ongoing">ongoing</string>
+    <string name="current_route_finished">finished，waiting rate</string>
+    <string name="current_route_paused">pausing</string>
+    <string name="today_history_route">today history route</string>
 </resources>

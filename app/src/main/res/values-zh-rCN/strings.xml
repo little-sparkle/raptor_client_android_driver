@@ -15,4 +15,11 @@
     <string name="order_count">接单:%1$d</string>
     <string name="sum">流水:%1$s</string>
     <string name="bargain_rate">成交率:%1$d%%</string>
+
+    <string name="current_route">当前行程: %1$s</string>
+    <string name="current_route_listening">听单中</string>
+    <string name="current_route_ongoing">进行中</string>
+    <string name="current_route_finished">已完成，待评价</string>
+    <string name="current_route_paused">暂停中</string>
+    <string name="today_history_route">今日历史行程</string>
 </resources>
