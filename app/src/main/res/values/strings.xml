@@ -30,4 +30,8 @@
     <string name="bargain_rate_label">bargain rate</string>
     <string name="rating_label">rating</string>
     <string name="my_route_label">my route</string>
+
+    <string name="wallet">wallet</string>
+    <string name="message_center">message_center</string>
+    <string name="my_car">my car</string>
 </resources>

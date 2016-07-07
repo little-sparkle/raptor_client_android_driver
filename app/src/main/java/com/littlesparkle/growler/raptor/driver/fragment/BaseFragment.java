@@ -24,4 +24,8 @@ public class BaseFragment extends Fragment {
                 .setConfirmClickListener(listener)
                 .show();
     }
+
+    protected void showDialogWithMessage(final String message) {
+        showDialogWithMessage(null, message);
+    }
 }

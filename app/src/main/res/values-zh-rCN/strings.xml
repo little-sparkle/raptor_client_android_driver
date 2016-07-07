@@ -30,4 +30,8 @@
     <string name="bargain_rate_label">成交率</string>
     <string name="rating_label">评价星级</string>
     <string name="my_route_label">我的行程</string>
+
+    <string name="wallet">钱包</string>
+    <string name="message_center">消息中心</string>
+    <string name="my_car">我的车辆</string>
 </resources>

@@ -145,11 +145,16 @@
         </LinearLayout>
     </LinearLayout>
 
+    <include
+        android:id="@+id/divider_transparent"
+        layout="@layout/divider_transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/personal_info_2" />
 
-    <LinearLayout
+    <com.lhh.ptrrv.library.PullToRefreshRecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/divider_transparent"></LinearLayout>
-
-
+        android:layout_below="@+id/divider_transparent" />
 </RelativeLayout>
