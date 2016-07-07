@@ -20,7 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="f3bc4cdd62c95a61430ee6d373a6d31f" />
@@ -37,6 +36,8 @@
             android:launchMode="singleTop" />
 
         <service android:name="com.amap.api.location.APSService" />
+
+        <activity android:name=".activity.WebViewActivity"></activity>
     </application>
 
 </manifest>

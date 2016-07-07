@@ -1,5 +1,6 @@
 package com.littlesparkle.growler.raptor.driver.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.lhh.ptrrv.library.PullToRefreshRecyclerView;
 import com.littlesparkle.growler.raptor.driver.R;
+import com.littlesparkle.growler.raptor.driver.activity.WebViewActivity;
 import com.littlesparkle.growler.raptor.driver.base.RecyclerBaseAdapter;
 import com.littlesparkle.growler.raptor.driver.label.LabelFunctionAdapter;
 import com.littlesparkle.growler.raptor.driver.label.LabelFunctionItem;
@@ -40,14 +42,20 @@ public class MeFragment extends BaseFragment {
         ButterKnife.bind(this, view);
 
         mAdapter = new LabelFunctionAdapter(getContext());
-        mItems.add(new LabelFunctionItem(R.drawable.wallet_membership_grey, R.string.wallet));
-        mItems.add(new LabelFunctionItem(R.drawable.message_grey, R.string.message_center));
-        mItems.add(new LabelFunctionItem(R.drawable.directions_car_grey, R.string.my_car));
+        mItems.add(new LabelFunctionItem(0, R.drawable.wallet_membership_grey, R.string.wallet,
+                "http://www.baidu.com"));
+        mItems.add(new LabelFunctionItem(1, R.drawable.message_grey, R.string.message_center,
+                "http://www.sina.com.cn"));
+        mItems.add(new LabelFunctionItem(2, R.drawable.directions_car_grey, R.string.my_car,
+                "http://www.github.com"));
         mAdapter.setDataList(mItems);
         mAdapter.setOnItemClickListener(new RecyclerBaseAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, Object object) {
-                showDialogWithMessage("xxxx");
+                LabelFunctionItem item = (LabelFunctionItem) object;
+                Intent it = new Intent(getContext(), WebViewActivity.class);
+                it.putExtra("url", item.url);
+                startActivity(it);
             }
         });
 

@@ -2,7 +2,6 @@ package com.littlesparkle.growler.raptor.driver.activity;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.widget.CompoundButton;
@@ -80,8 +79,8 @@ public class MapActivity extends BaseActivity implements AMap.OnMapLoadedListene
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
         mMapView.onSaveInstanceState(outState);
     }
 
