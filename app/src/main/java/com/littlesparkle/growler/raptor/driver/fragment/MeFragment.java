@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MeFragment extends BaseFragment {
-    @BindView(R.id.recycler_view)
+    @BindView(R.id.function_list)
     PullToRefreshRecyclerView mList;
 
     private LabelFunctionAdapter mAdapter;

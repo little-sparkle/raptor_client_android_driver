@@ -34,4 +34,9 @@
     <string name="wallet">钱包</string>
     <string name="message_center">消息中心</string>
     <string name="my_car">我的车辆</string>
+
+    <string name="capture">拍照</string>
+    <string name="album">相册</string>
+
+    <string name="sdcard_not_found">未找到存储卡，无法存储照片！</string>
 </resources>

@@ -34,4 +34,9 @@
     <string name="wallet">wallet</string>
     <string name="message_center">message_center</string>
     <string name="my_car">my car</string>
+
+    <string name="capture">capture</string>
+    <string name="album">album</string>
+
+    <string name="sdcard_not_found">Sdcard not found!</string>
 </resources>
