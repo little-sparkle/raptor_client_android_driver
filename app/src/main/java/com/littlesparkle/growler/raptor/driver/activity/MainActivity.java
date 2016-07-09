@@ -6,6 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatButton;
 
 import com.amap.api.maps2d.model.LatLng;
+import com.littlesparkle.growler.library.dialog.DialogHelper;
+import com.littlesparkle.growler.library.activity.BaseActivity;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.fragment.CurrentFragment;
 import com.littlesparkle.growler.raptor.driver.fragment.MeFragment;
@@ -19,7 +21,6 @@ import butterknife.OnClick;
 
 
 public class MainActivity extends BaseActivity {
-
     @BindView(R.id.view_pager)
     ViewPager mViewPager;
 
@@ -41,7 +42,7 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.order_mode)
     public void onOrderModeClick(AppCompatButton button) {
-        showDialogWithMessage(getString(R.string.order_mode));
+        DialogHelper.showDialogWithMessage(this, getString(R.string.order_mode));
     }
 
     @BindView(R.id.shutdown_mode)
@@ -49,7 +50,7 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.shutdown_mode)
     public void onShutDownModeClick(AppCompatButton button) {
-        showDialogWithMessage(getString(R.string.shutdown_mode));
+        DialogHelper.showDialogWithMessage(this, getString(R.string.shutdown_mode));
     }
 
     ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -69,8 +70,12 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         initUI(savedInstanceState);
+    }
+
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.activity_main;
     }
 
     private void initUI(Bundle savedInstanceState) {

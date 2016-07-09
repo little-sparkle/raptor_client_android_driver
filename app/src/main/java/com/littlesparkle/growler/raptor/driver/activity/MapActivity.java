@@ -14,6 +14,7 @@ import com.amap.api.maps2d.model.BitmapDescriptorFactory;
 import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.maps2d.model.Marker;
 import com.amap.api.maps2d.model.MarkerOptions;
+import com.littlesparkle.growler.library.activity.BaseActivity;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.map.LocationEvent;
 import com.littlesparkle.growler.raptor.driver.map.LocationTask;
@@ -47,7 +48,6 @@ public class MapActivity extends BaseActivity implements AMap.OnMapLoadedListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
 
         ButterKnife.bind(this);
 
@@ -76,6 +76,11 @@ public class MapActivity extends BaseActivity implements AMap.OnMapLoadedListene
                 }
             }
         });
+    }
+
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.activity_map;
     }
 
     @Override

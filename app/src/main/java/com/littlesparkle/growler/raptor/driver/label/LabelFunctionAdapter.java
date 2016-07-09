@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.littlesparkle.growler.library.base.RecyclerBaseAdapter;
 import com.littlesparkle.growler.raptor.driver.R;
-import com.littlesparkle.growler.raptor.driver.base.RecyclerBaseAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

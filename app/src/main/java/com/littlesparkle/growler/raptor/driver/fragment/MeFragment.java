@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lhh.ptrrv.library.PullToRefreshRecyclerView;
+import com.littlesparkle.growler.library.base.RecyclerBaseAdapter;
+import com.littlesparkle.growler.library.webview.WebViewActivity;
 import com.littlesparkle.growler.raptor.driver.R;
-import com.littlesparkle.growler.raptor.driver.activity.WebViewActivity;
-import com.littlesparkle.growler.raptor.driver.base.RecyclerBaseAdapter;
 import com.littlesparkle.growler.raptor.driver.label.LabelFunctionAdapter;
 import com.littlesparkle.growler.raptor.driver.label.LabelFunctionItem;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
@@ -55,6 +55,7 @@ public class MeFragment extends BaseFragment {
                 LabelFunctionItem item = (LabelFunctionItem) object;
                 Intent it = new Intent(getContext(), WebViewActivity.class);
                 it.putExtra("url", item.url);
+                it.putExtra("title", getString(item.labelName));
                 startActivity(it);
             }
         });
