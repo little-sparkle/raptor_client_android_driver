@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_bar_height"
+    android:layout_alignParentTop="true">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/title_bar_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/arrow_back_grey" />
+
+    <TextView
+        android:id="@+id/title_bar_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textColor="@color/md_grey_500"
+        android:textSize="@dimen/title_bar_text_size" />
+</RelativeLayout>

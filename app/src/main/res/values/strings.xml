@@ -16,7 +16,7 @@
     <string name="sum">sum:%1$s</string>
     <string name="bargain_rate">bargain rate:%1$d%%</string>
 
-    <string name="current_route">current route: %1$s</string>
+    <string name="current_route">current route</string>
     <string name="current_route_listening">listening</string>
     <string name="current_route_ongoing">ongoing</string>
     <string name="current_route_finished">finished，waiting rate</string>
@@ -29,8 +29,8 @@
 
     <string name="bargain_rate_label">bargain rate</string>
     <string name="rating_label">rating</string>
-    <string name="my_route_label">my route</string>
 
+    <string name="my_route_label">my route</string>
     <string name="wallet">wallet</string>
     <string name="message_center">message_center</string>
     <string name="my_car">my car</string>

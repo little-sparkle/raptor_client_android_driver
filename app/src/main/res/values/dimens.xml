@@ -15,6 +15,7 @@
 
     <dimen name="text_primary">24sp</dimen>
     <dimen name="text_secondary">18sp</dimen>
+    <dimen name="text_small">14sp</dimen>
 
     <dimen name="margin_normal">4dp</dimen>
     <dimen name="padding_normal">4dp</dimen>

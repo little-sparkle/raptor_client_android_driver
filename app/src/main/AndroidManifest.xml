@@ -23,7 +23,8 @@
             android:name="com.amap.api.v2.apikey"
             android:value="f3bc4cdd62c95a61430ee6d373a6d31f" />
 
-        <activity android:name=".activity.SplashActivity"
+        <activity
+            android:name=".activity.SplashActivity"
             android:theme="@style/AppFullTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.MapActivity"
@@ -42,7 +42,7 @@
 
         <service android:name="com.amap.api.location.APSService" />
 
-
+        <activity android:name=".activity.RouteListActivity"></activity>
     </application>
 
 </manifest>

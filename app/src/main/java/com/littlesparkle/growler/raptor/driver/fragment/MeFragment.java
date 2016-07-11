@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 
 import com.lhh.ptrrv.library.PullToRefreshRecyclerView;
 import com.littlesparkle.growler.library.base.RecyclerBaseAdapter;
-import com.littlesparkle.growler.library.webview.WebViewActivity;
 import com.littlesparkle.growler.raptor.driver.R;
+import com.littlesparkle.growler.raptor.driver.activity.RouteListActivity;
 import com.littlesparkle.growler.raptor.driver.label.LabelFunctionAdapter;
 import com.littlesparkle.growler.raptor.driver.label.LabelFunctionItem;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
@@ -48,15 +48,29 @@ public class MeFragment extends BaseFragment {
                 "http://www.sina.com.cn"));
         mItems.add(new LabelFunctionItem(2, R.drawable.directions_car_grey, R.string.my_car,
                 "http://www.github.com"));
+        mItems.add(new LabelFunctionItem(3, R.drawable.directions_car_grey, R.string.my_route_label,
+                "http://www.github.com"));
         mAdapter.setDataList(mItems);
         mAdapter.setOnItemClickListener(new RecyclerBaseAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, Object object) {
                 LabelFunctionItem item = (LabelFunctionItem) object;
-                Intent it = new Intent(getContext(), WebViewActivity.class);
-                it.putExtra("url", item.url);
-                it.putExtra("title", getString(item.labelName));
-                startActivity(it);
+                Intent it;
+                switch (item.id) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        it = new Intent(getContext(), RouteListActivity.class);
+                        it.putExtra("title", getString(item.labelName));
+                        startActivity(it);
+                        break;
+                    default:
+                        break;
+                }
             }
         });
 
@@ -66,5 +80,6 @@ public class MeFragment extends BaseFragment {
                 .build();
         mList.getRecyclerView().addItemDecoration(d);
         mList.setAdapter(mAdapter);
+        mList.getRecyclerView().setOverScrollMode(View.OVER_SCROLL_NEVER);
     }
 }

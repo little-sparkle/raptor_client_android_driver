@@ -101,7 +101,6 @@ public class MapActivity extends BaseActivity implements AMap.OnMapLoadedListene
         mMapView.onResume();
     }
 
-
     @Override
     protected void onPause() {
         super.onPause();

@@ -6,12 +6,14 @@
         android:id="@+id/base_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
         android:padding="@dimen/padding_normal">
 
         <LinearLayout
             android:id="@+id/first_row"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
             android:orientation="horizontal">
 
             <TextView
@@ -40,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/first_row"
+            android:layout_margin="@dimen/margin_normal"
             android:orientation="horizontal">
 
             <TextView
@@ -69,47 +72,34 @@
         layout="@layout/divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/base_info" />
+        android:layout_below="@id/base_info"
+        android:layout_margin="@dimen/margin_normal" />
 
     <RelativeLayout
         android:id="@+id/current_route_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/divider1"
+        android:layout_margin="@dimen/margin_normal"
         android:padding="@dimen/padding_normal">
 
         <TextView
-            android:id="@+id/current_route_status"
+            android:id="@+id/current_route_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
             android:gravity="center_vertical"
             android:text="@string/current_route"
             android:textColor="@color/text_primary"
             android:textSize="@dimen/text_primary" />
-    </RelativeLayout>
 
-    <include
-        android:id="@+id/divider2"
-        layout="@layout/divider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/current_route_info" />
-
-    <RelativeLayout
-        android:id="@+id/today_history_route_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/divider2"
-        android:padding="@dimen/padding_normal">
-
-        <TextView
-            android:id="@+id/today_history_route_title"
+        <include
+            android:id="@+id/current_route_info_detail"
+            layout="@layout/route_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:text="@string/today_history_route"
-            android:textColor="@color/text_primary"
-            android:textSize="@dimen/text_primary" />
+            android:layout_below="@id/current_route_title"
+            android:layout_margin="@dimen/margin_normal" />
     </RelativeLayout>
 
 </RelativeLayout>

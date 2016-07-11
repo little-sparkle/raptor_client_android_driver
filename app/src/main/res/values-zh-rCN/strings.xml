@@ -16,7 +16,7 @@
     <string name="sum">流水:%1$s</string>
     <string name="bargain_rate">成交率:%1$d%%</string>
 
-    <string name="current_route">当前行程: %1$s</string>
+    <string name="current_route">当前行程</string>
     <string name="current_route_listening">听单中</string>
     <string name="current_route_ongoing">进行中</string>
     <string name="current_route_finished">已完成，待评价</string>
@@ -29,8 +29,8 @@
 
     <string name="bargain_rate_label">成交率</string>
     <string name="rating_label">评价星级</string>
-    <string name="my_route_label">我的行程</string>
 
+    <string name="my_route_label">我的行程</string>
     <string name="wallet">钱包</string>
     <string name="message_center">消息中心</string>
     <string name="my_car">我的车辆</string>

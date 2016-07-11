@@ -9,4 +9,6 @@
     <color name="text_secondary">@color/md_blue_grey_500</color>
 
     <color name="float_layer">#10FFFFFF</color>
+
+    <color name="title_bar_background">#1d2441</color>
 </resources>
