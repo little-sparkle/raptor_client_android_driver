@@ -66,6 +66,7 @@
             android:layout_alignBottom="@id/start_point_icon"
             android:layout_alignTop="@id/start_point_icon"
             android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/margin_normal"
             android:layout_toRightOf="@id/start_point_icon"
             android:gravity="center"
             android:text="华贸城"
@@ -108,6 +109,5 @@
             android:textSize="@dimen/text_small" />
 
     </RelativeLayout>
-
 
 </LinearLayout>
