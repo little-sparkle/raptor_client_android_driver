@@ -5,12 +5,13 @@
     android:layout_alignParentTop="true">
 
     <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/title_bar_close"
+        android:id="@+id/title_bar_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/arrow_back_grey" />
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:src="@drawable/title_bar_back_white" />
 
     <TextView
         android:id="@+id/title_bar_text"

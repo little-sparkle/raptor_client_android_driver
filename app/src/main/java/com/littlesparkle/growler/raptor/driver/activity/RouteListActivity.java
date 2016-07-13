@@ -22,10 +22,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class RouteListActivity extends BaseActivity {
-    @BindView(R.id.title_bar_close)
+    @BindView(R.id.title_bar_back)
     AppCompatImageView mBack;
 
-    @OnClick(R.id.title_bar_close)
+    @OnClick(R.id.title_bar_back)
     public void onCloseClick() {
         onBackPressed();
     }

@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_margin="@dimen/margin_normal"
-            android:src="@drawable/location_on_black" />
+            android:src="@drawable/src_location_mark" />
 
         <TextView
             android:id="@+id/start_point_text"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_margin="@dimen/margin_normal"
-            android:src="@drawable/keyboard_arrow_right_grey" />
+            android:src="@drawable/enter_arrow" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_margin="@dimen/margin_normal"
-            android:src="@drawable/location_on_black" />
+            android:src="@drawable/dest_location_mark" />
 
         <TextView
             android:id="@+id/end_point_text"

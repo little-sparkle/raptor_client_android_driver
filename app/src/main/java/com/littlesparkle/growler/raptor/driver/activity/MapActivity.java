@@ -2,6 +2,7 @@ package com.littlesparkle.growler.raptor.driver.activity;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.widget.CompoundButton;
@@ -24,6 +25,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MapActivity extends BaseActivity implements AMap.OnMapLoadedListener {
     private static final int LOCATION_INTERVAL = 3000; // 3s
@@ -32,6 +34,14 @@ public class MapActivity extends BaseActivity implements AMap.OnMapLoadedListene
 
     private int mZoomLevel = 18;
     private int mMode = LOCATE_MODE;
+
+    @BindView(R.id.title_bar_back)
+    AppCompatImageView mBack;
+
+    @OnClick(R.id.title_bar_back)
+    public void onCloseClick() {
+        onBackPressed();
+    }
 
     @BindView(R.id.map_view)
     MapView mMapView;

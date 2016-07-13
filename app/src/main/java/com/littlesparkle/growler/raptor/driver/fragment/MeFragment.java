@@ -43,13 +43,13 @@ public class MeFragment extends BaseFragment {
         ButterKnife.bind(this, view);
 
         mAdapter = new LabelFunctionAdapter(getContext());
-        mItems.add(new LabelFunctionItem(0, R.drawable.wallet_membership_grey, R.string.wallet,
+        mItems.add(new LabelFunctionItem(0, R.drawable.wallet_icon, R.string.wallet,
                 "http://www.baidu.com"));
-        mItems.add(new LabelFunctionItem(1, R.drawable.message_grey, R.string.message_center,
+        mItems.add(new LabelFunctionItem(1, R.drawable.message_icon, R.string.message_center,
                 "http://www.sina.com.cn"));
-        mItems.add(new LabelFunctionItem(2, R.drawable.directions_car_grey, R.string.my_car,
+        mItems.add(new LabelFunctionItem(2, R.drawable.my_car_icon, R.string.my_car,
                 "http://www.github.com"));
-        mItems.add(new LabelFunctionItem(3, R.drawable.directions_car_grey, R.string.my_route_label,
+        mItems.add(new LabelFunctionItem(3, R.drawable.my_route_icon, R.string.my_route_label,
                 "http://www.github.com"));
         mAdapter.setDataList(mItems);
         mAdapter.setOnItemClickListener(new RecyclerBaseAdapter.OnRecyclerViewItemClickListener() {

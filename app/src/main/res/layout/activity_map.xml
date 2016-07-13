@@ -30,6 +30,15 @@
             android:layout_centerVertical="true"
             android:text="@string/map_mode_locate"
             android:textColor="@color/text_secondary" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/title_bar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:src="@drawable/title_bar_back_white" />
     </RelativeLayout>
 
     <com.amap.api.maps2d.MapView
