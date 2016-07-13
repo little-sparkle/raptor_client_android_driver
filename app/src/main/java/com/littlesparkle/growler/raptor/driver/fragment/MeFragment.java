@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.lhh.ptrrv.library.PullToRefreshRecyclerView;
 import com.littlesparkle.growler.library.base.RecyclerBaseAdapter;
+import com.littlesparkle.growler.library.webview.WebViewActivity;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.activity.RouteListActivity;
 import com.littlesparkle.growler.raptor.driver.label.LabelFunctionAdapter;
@@ -58,10 +59,12 @@ public class MeFragment extends BaseFragment {
                 Intent it;
                 switch (item.id) {
                     case 0:
-                        break;
                     case 1:
-                        break;
                     case 2:
+                        it = new Intent(getContext(), WebViewActivity.class);
+                        it.putExtra("title", getString(item.labelName));
+                        it.putExtra("url", item.url);
+                        startActivity(it);
                         break;
                     case 3:
                         it = new Intent(getContext(), RouteListActivity.class);
