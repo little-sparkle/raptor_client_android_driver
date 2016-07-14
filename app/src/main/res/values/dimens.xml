@@ -4,23 +4,23 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="tab_host_height">60dp</dimen>
-    <dimen name="tab_host_text_size">20sp</dimen>
-    <dimen name="tab_host_indicator_width">60dp</dimen>
+    <dimen name="tab_host_height">48dp</dimen>
+    <dimen name="tab_host_text_size">22sp</dimen>
+    <dimen name="tab_host_indicator_width">48dp</dimen>
 
-    <dimen name="footer_item_diameter_small">60dp</dimen>
-    <dimen name="footer_item_diameter_large">80dp</dimen>
-    <dimen name="footer_item_text_small">14sp</dimen>
+    <dimen name="footer_item_diameter_small">48dp</dimen>
+    <dimen name="footer_item_diameter_large">60dp</dimen>
+    <dimen name="footer_item_text_small">12sp</dimen>
     <dimen name="footer_item_text_large">18sp</dimen>
 
-    <dimen name="text_primary">24sp</dimen>
+    <dimen name="text_primary">22sp</dimen>
     <dimen name="text_secondary">18sp</dimen>
-    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_small">12sp</dimen>
 
     <dimen name="margin_normal">4dp</dimen>
     <dimen name="padding_normal">4dp</dimen>
     <dimen name="padding_divider">16dp</dimen>
 
-    <dimen name="activity_map_titlebar_height">60dp</dimen>
-    <dimen name="activity_map_titlebar_text_size">28sp</dimen>
+    <dimen name="activity_map_titlebar_height">48dp</dimen>
+    <dimen name="activity_map_titlebar_text_size">22sp</dimen>
 </resources>
