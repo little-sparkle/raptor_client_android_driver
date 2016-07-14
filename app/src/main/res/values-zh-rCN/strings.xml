@@ -36,8 +36,5 @@
     <string name="my_car">我的车辆</string>
     <string name="settings">设置</string>
 
-    <string name="capture">拍照</string>
-    <string name="album">相册</string>
-
-    <string name="sdcard_not_found">未找到存储卡，无法存储照片！</string>
+    <string name="change_password">修改密码</string>
 </resources>

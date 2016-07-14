@@ -193,6 +193,12 @@
                 android:scaleType="center"
                 android:src="@drawable/enter_arrow" />
 
+            <include
+                layout="@layout/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -232,6 +238,12 @@
                 android:layout_margin="@dimen/margin_normal"
                 android:scaleType="center"
                 android:src="@drawable/enter_arrow" />
+
+            <include
+                layout="@layout/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
 
         </RelativeLayout>
 

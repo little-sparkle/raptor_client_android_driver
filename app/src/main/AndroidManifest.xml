@@ -42,7 +42,9 @@
 
         <service android:name="com.amap.api.location.APSService" />
 
-        <activity android:name=".activity.RouteListActivity"></activity>
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

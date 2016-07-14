@@ -1,5 +1,6 @@
 package com.littlesparkle.growler.raptor.driver.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.littlesparkle.growler.library.dialog.DialogHelper;
 import com.littlesparkle.growler.raptor.driver.R;
+import com.littlesparkle.growler.raptor.driver.activity.SettingsActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -58,7 +60,7 @@ public class MeFragment extends BaseFragment {
                 DialogHelper.showDialogWithMessage(getContext(), getString(R.string.my_car));
                 break;
             case R.id.settings_container:
-                DialogHelper.showDialogWithMessage(getContext(), getString(R.string.settings));
+                startActivity(new Intent(getContext(), SettingsActivity.class));
                 break;
             default:
                 break;
