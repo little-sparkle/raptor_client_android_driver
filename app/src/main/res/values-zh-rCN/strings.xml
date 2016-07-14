@@ -34,6 +34,7 @@
     <string name="wallet">钱包</string>
     <string name="message_center">消息中心</string>
     <string name="my_car">我的车辆</string>
+    <string name="settings">设置</string>
 
     <string name="capture">拍照</string>
     <string name="album">相册</string>

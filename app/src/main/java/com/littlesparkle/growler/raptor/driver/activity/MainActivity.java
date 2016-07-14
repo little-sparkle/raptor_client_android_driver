@@ -7,12 +7,7 @@ import android.support.v7.widget.AppCompatButton;
 
 import com.amap.api.maps2d.model.LatLng;
 import com.littlesparkle.growler.library.activity.BaseActivity;
-import com.littlesparkle.growler.library.bean.Car;
-import com.littlesparkle.growler.library.bean.CarBrand;
-import com.littlesparkle.growler.library.bean.CarSerie;
-import com.littlesparkle.growler.library.bean.Driver;
 import com.littlesparkle.growler.library.dialog.DialogHelper;
-import com.littlesparkle.growler.library.user.UserManager;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.fragment.CurrentFragment;
 import com.littlesparkle.growler.raptor.driver.fragment.MeFragment;
@@ -95,40 +90,5 @@ public class MainActivity extends BaseActivity {
         mViewPager.setAdapter(adapter);
         mSmartTabLayout.setViewPager(mViewPager);
         mSmartTabLayout.setOnPageChangeListener(mOnPageChangeListener);
-
-        Car car = new Car();
-        car.car_id = 123;
-        car.car_number = "A12345";
-        car.vehicle_license_pic = "A33333";
-
-        CarBrand cb = new CarBrand();
-        cb.car_brand_id = 333;
-        cb.name = "xxxx";
-
-        CarSerie cs = new CarSerie();
-        cs.car_serie_id = 444;
-        cs.name = "ewrewrew";
-
-        Driver driver = new Driver();
-        driver.driver_type = 1;
-        driver.driving_license = "fdsfds";
-        driver.driving_license_pic = "fwfew";
-        driver.driving_license_type = "kkjkj";
-        driver.idcard_number = "009809";
-        driver.is_online = 2;
-//        driver.car = car;
-//        driver.car_brand = cb;
-//        driver.car_serie = cs;
-        driver.persist(this);
-
-        Driver d = new Driver();
-        d.load(this);
-        d.dump();
-
-        UserManager.signOut(this);
-
-        Driver d2 = new Driver();
-        d2.load(this);
-        d2.dump();
     }
 }
