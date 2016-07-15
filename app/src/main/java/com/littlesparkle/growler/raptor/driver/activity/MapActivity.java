@@ -143,7 +143,7 @@ public class MapActivity extends BaseActivity implements AMap.OnMapLoadedListene
         myMarkerOptions
                 .icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
                         .decodeResource(getResources(),
-                                R.drawable.location_on_black)));
+                                R.drawable.src_location_mark)));
         mMyPositionMark = mAMap.addMarker(myMarkerOptions);
 
         if (mPassengerLocation != null) {
@@ -152,7 +152,7 @@ public class MapActivity extends BaseActivity implements AMap.OnMapLoadedListene
             passengerOptions
                     .icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
                             .decodeResource(getResources(),
-                                    R.drawable.location_on_black)));
+                                    R.drawable.dest_location_mark)));
             mPassengerMark = mAMap.addMarker(passengerOptions);
         }
 
