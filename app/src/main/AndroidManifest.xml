@@ -33,6 +33,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.RegisterActivity" />
         <activity
             android:name=".activity.MapActivity"
             android:launchMode="singleTop" />
@@ -44,7 +45,7 @@
 
         <activity
             android:name=".activity.SettingsActivity"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>
