@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.littlesparkle.growler.library.dialog.DialogHelper;
+import com.littlesparkle.growler.library.webview.WebViewActivity;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.activity.SettingsActivity;
 
@@ -48,10 +49,12 @@ public class MeFragment extends BaseFragment {
     }
 
     private void onViewClick(View view) {
-
         switch (view.getId()) {
             case R.id.wallet_container:
-                DialogHelper.showDialogWithMessage(getContext(), getString(R.string.wallet));
+                Intent it = new Intent(getContext(), WebViewActivity.class);
+                it.putExtra("title", getString(R.string.wallet));
+                it.putExtra("url", "file:///android_asset/index.html");
+                startActivity(it);
                 break;
             case R.id.message_container:
                 DialogHelper.showDialogWithMessage(getContext(), getString(R.string.message_center));
