@@ -21,7 +21,7 @@ public class SplashActivity extends BaseSplashActivity {
     @Override
     protected void onSplashEnd() {
 //        startActivity(new Intent(this, MainActivity.class));
-        startActivity(new Intent(this, ForgetPwdActivity.class));
+        startActivity(new Intent(this, ResetPwdActivity.class));
         finish();
     }
 }
