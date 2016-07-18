@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.littlesparkle.growler.library.activity.BaseSplashActivity;
-import com.littlesparkle.growler.library.log.Logger;
 import com.littlesparkle.growler.raptor.driver.R;
 
 public class SplashActivity extends BaseSplashActivity {
