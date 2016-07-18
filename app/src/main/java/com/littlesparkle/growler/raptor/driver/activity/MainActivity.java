@@ -79,6 +79,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initUI(Bundle savedInstanceState) {
+        mIsDoubleClickToQuit = true;
+
         ButterKnife.bind(this);
 
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
