@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">猛禽打车</string>
+    <string name="app_name">快打车司机端</string>
 
     <string name="tab_item_current">当前</string>
     <string name="tab_item_me">我</string>
