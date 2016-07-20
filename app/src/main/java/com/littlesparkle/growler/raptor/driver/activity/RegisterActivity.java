@@ -5,8 +5,7 @@ import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
 import com.littlesparkle.growler.library.http.DefaultResponse;
 import com.littlesparkle.growler.library.misc.MiscHelper;
 import com.littlesparkle.growler.library.user.UserRequest;
-import com.littlesparkle.growler.library.user.driver.DriverRequest;
-import com.littlesparkle.growler.library.user.driver.DriverSignUpResponse;
+import com.littlesparkle.growler.library.user.UserSignUpResponse;
 
 public class RegisterActivity extends BaseRegisterActivity {
     @Override
@@ -52,10 +51,10 @@ public class RegisterActivity extends BaseRegisterActivity {
             return;
         }
 
-        new DriverRequest().signup(new BaseHttpSubscriber<DriverSignUpResponse>(this, this) {
+        new UserRequest().signup(new BaseHttpSubscriber<UserSignUpResponse>(this, this) {
             @Override
-            public void onNext(DriverSignUpResponse driverSignUpResponse) {
+            public void onNext(UserSignUpResponse driverSignUpResponse) {
             }
-        }, phoneNumber, pwd, "1234");
+        }, phoneNumber, pwd, mAuthCodeInput.getText().toString());
     }
 }
