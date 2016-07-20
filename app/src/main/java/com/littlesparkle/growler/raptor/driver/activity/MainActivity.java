@@ -70,7 +70,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initUI(savedInstanceState);
     }
 
     @Override
@@ -78,10 +77,12 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-    private void initUI(Bundle savedInstanceState) {
-        mIsDoubleClickToQuit = true;
-
+    @Override
+    protected void initView() {
+        super.initView();
         ButterKnife.bind(this);
+
+        mIsDoubleClickToQuit = true;
 
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
@@ -92,5 +93,10 @@ public class MainActivity extends BaseActivity {
         mViewPager.setAdapter(adapter);
         mSmartTabLayout.setViewPager(mViewPager);
         mSmartTabLayout.setOnPageChangeListener(mOnPageChangeListener);
+    }
+
+    @Override
+    protected void initData() {
+        super.initData();
     }
 }

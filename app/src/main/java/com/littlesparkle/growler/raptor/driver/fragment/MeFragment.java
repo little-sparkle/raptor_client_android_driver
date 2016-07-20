@@ -3,6 +3,7 @@ package com.littlesparkle.growler.raptor.driver.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,7 @@ import com.littlesparkle.growler.raptor.driver.activity.SettingsActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MeFragment extends BaseFragment {
+public class MeFragment extends Fragment {
     @OnClick(R.id.wallet_container)
     public void onWalletClick(View view) {
         onViewClick(view);

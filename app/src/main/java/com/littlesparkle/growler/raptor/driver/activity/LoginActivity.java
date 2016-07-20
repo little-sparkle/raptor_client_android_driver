@@ -3,6 +3,7 @@ package com.littlesparkle.growler.raptor.driver.activity;
 import android.content.Intent;
 
 import com.littlesparkle.growler.library.activity.BaseLoginActivity;
+import com.littlesparkle.growler.library.bean.User;
 import com.littlesparkle.growler.library.dialog.DialogHelper;
 import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
 import com.littlesparkle.growler.library.log.Logger;
@@ -49,19 +50,16 @@ public class LoginActivity extends BaseLoginActivity {
 
             @Override
             public void onNext(UserSignInResponse driverSignInResponse) {
+                User user = driverSignInResponse.data.user;
+                user.persist(LoginActivity.this);
+
                 Logger.log("driver signin : " + driverSignInResponse);
-                if (driverSignInResponse.data.user.is_driver == 1 &&
-                        driverSignInResponse.data.user.verified == 1) {
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();
+                if (user.is_driver == 1 && user.verified == 1) {
+                    startMainActivity(user);
                 } else {
-                    if (driverSignInResponse.data.user.is_driver == 0) {
-                        // todo: start to register
-                        Intent it = new Intent(LoginActivity.this, ApplyDriverActivity.class);
-                        it.putExtra("title", "申请司机");
-                        it.putExtra("url", "http://www.baidu.com");
-                        startActivity(it);
-                    } else if (driverSignInResponse.data.user.verified == 0) {
+                    if (user.is_driver == 0) {
+                        startMainActivity(user);
+                    } else if (user.verified == 0) {
                         // todo: toast a tip: is under verifying
                     } else {
 
@@ -69,5 +67,20 @@ public class LoginActivity extends BaseLoginActivity {
                 }
             }
         }, phoneNumber, pwd);
+    }
+
+    private void startMainActivity(User user) {
+        Intent it = new Intent(LoginActivity.this, MainActivity.class);
+        it.putExtra("user", user);
+        startActivity(it);
+        finish();
+    }
+
+    private void startApplyDriverActivity(User user) {
+        Intent it = new Intent(LoginActivity.this, ApplyDriverActivity.class);
+        it.putExtra("title", "申请司机");
+        it.putExtra("url", "http://www.baidu.com");
+        it.putExtra("user", user);
+        startActivity(it);
     }
 }
