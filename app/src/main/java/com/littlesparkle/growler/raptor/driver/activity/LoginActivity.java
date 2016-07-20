@@ -50,6 +50,23 @@ public class LoginActivity extends BaseLoginActivity {
             @Override
             public void onNext(UserSignInResponse driverSignInResponse) {
                 Logger.log("driver signin : " + driverSignInResponse);
+                if (driverSignInResponse.data.user.is_driver == 1 &&
+                        driverSignInResponse.data.user.verified == 1) {
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    finish();
+                } else {
+                    if (driverSignInResponse.data.user.is_driver == 0) {
+                        // todo: start to register
+                        Intent it = new Intent(LoginActivity.this, ApplyDriverActivity.class);
+                        it.putExtra("title", "申请司机");
+                        it.putExtra("url", "http://www.baidu.com");
+                        startActivity(it);
+                    } else if (driverSignInResponse.data.user.verified == 0) {
+                        // todo: toast a tip: is under verifying
+                    } else {
+
+                    }
+                }
             }
         }, phoneNumber, pwd);
     }
