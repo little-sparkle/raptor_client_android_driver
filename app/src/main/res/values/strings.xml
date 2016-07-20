@@ -37,4 +37,10 @@
     <string name="settings">settings</string>
 
     <string name="change_password">change password</string>
+    <string name="illegal_mobile">illegal mobile</string>
+    <string name="illegal_password">illegal password</string>
+    <string name="passwords_are_not_equal">passwords are not equal</string>
+
+    <string name="apply_for_driver">apply for driver</string>
+    <string name="application_is_under_verifying">application is under verifying</string>
 </resources>

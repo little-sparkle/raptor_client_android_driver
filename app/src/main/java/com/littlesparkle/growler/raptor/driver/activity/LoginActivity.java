@@ -1,6 +1,7 @@
 package com.littlesparkle.growler.raptor.driver.activity;
 
 import android.content.Intent;
+import android.widget.Toast;
 
 import com.littlesparkle.growler.library.activity.BaseLoginActivity;
 import com.littlesparkle.growler.library.bean.User;
@@ -10,6 +11,7 @@ import com.littlesparkle.growler.library.log.Logger;
 import com.littlesparkle.growler.library.misc.MiscHelper;
 import com.littlesparkle.growler.library.user.UserRequest;
 import com.littlesparkle.growler.library.user.UserSignInResponse;
+import com.littlesparkle.growler.raptor.driver.R;
 
 public class LoginActivity extends BaseLoginActivity {
     @Override
@@ -26,18 +28,14 @@ public class LoginActivity extends BaseLoginActivity {
     @Override
     protected void onLoginClick() {
         String phoneNumber = mMobileInput.getText().toString();
-        if ("".equals(phoneNumber)) {
-            return;
-        }
-        if (!MiscHelper.checkPhoneNumber(phoneNumber)) {
+        if ("".equals(phoneNumber) || !MiscHelper.checkPhoneNumber(phoneNumber)) {
+            Toast.makeText(this, R.string.illegal_mobile, Toast.LENGTH_SHORT).show();
             return;
         }
 
         String pwd = mPwdInput.getText().toString();
-        if ("".equals(pwd)) {
-            return;
-        }
-        if (!MiscHelper.checkPassword(pwd)) {
+        if ("".equals(pwd) || !MiscHelper.checkPassword(pwd)) {
+            Toast.makeText(this, R.string.illegal_password, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -60,7 +58,8 @@ public class LoginActivity extends BaseLoginActivity {
                     if (user.is_driver == 0) {
                         startMainActivity(user);
                     } else if (user.verified == 0) {
-                        // todo: toast a tip: is under verifying
+                        Toast.makeText(LoginActivity.this, R.string.application_is_under_verifying, Toast.LENGTH_SHORT)
+                                .show();
                     } else {
 
                     }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.littlesparkle.growler.library.activity.BaseActivity;
+import com.littlesparkle.growler.library.bean.Driver;
 import com.littlesparkle.growler.library.bean.User;
 import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
 import com.littlesparkle.growler.library.log.Logger;
@@ -64,12 +65,17 @@ public class CurrentFragment extends Fragment {
         initView();
     }
 
+    private Driver mDriver;
+
     private void initView() {
+        Logger.log("get driver info: id = " + mUser.user_id + ", token = " + mUser.token);
         new DriverRequest().getDriverInfo(new BaseHttpSubscriber<DriverInfoResponse>(
                 (BaseActivity) getActivity(), (BaseActivity) getActivity()) {
             @Override
             public void onNext(DriverInfoResponse driverInfoResponse) {
                 Logger.log("#######", driverInfoResponse.toString());
+                mDriver = driverInfoResponse.data.driver;
+                updateView();
             }
         }, mUser.user_id, mUser.token);
     }
@@ -79,5 +85,17 @@ public class CurrentFragment extends Fragment {
         mOrderCount.setText(String.format(getString(R.string.order_count), 0));
         mSum.setText(String.format(getString(R.string.sum), new DecimalFormat(".0").format(0)));
         mBargainRate.setText(String.format(getString(R.string.bargain_rate), 0));
+    }
+
+    private void updateView() {
+        if (mDriver != null) {
+            mOrderCount.setText(String.format(getString(R.string.order_count), mDriver.order_count));
+            if (mDriver.order_count != 0) {
+                mBargainRate.setText(String.format(getString(R.string.bargain_rate),
+                        (mDriver.order_success_count * 100) / mDriver.order_count));
+            } else {
+                mBargainRate.setText(String.format(getString(R.string.bargain_rate), 0));
+            }
+        }
     }
 }

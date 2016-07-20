@@ -37,4 +37,10 @@
     <string name="settings">设置</string>
 
     <string name="change_password">修改密码</string>
+    <string name="illegal_mobile">请检查手机号</string>
+    <string name="illegal_password">请检查密码</string>
+    <string name="passwords_are_not_equal">两次密码输入不同</string>
+
+    <string name="apply_for_driver">申请成为车主</string>
+    <string name="application_is_under_verifying">申请正在审核中</string>
 </resources>
