@@ -2,24 +2,14 @@ package com.littlesparkle.growler.raptor.driver.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
-import com.littlesparkle.growler.library.activity.BaseActivity;
+import com.littlesparkle.growler.library.activity.BaseTitleBarActivity;
 import com.littlesparkle.growler.raptor.driver.R;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SettingsActivity extends BaseActivity {
-
-    @OnClick(R.id.title_bar_back)
-    public void onBackClick() {
-        onBackPressed();
-    }
-
-    @BindView(R.id.title_bar_text)
-    TextView mTitleText;
+public class SettingsActivity extends BaseTitleBarActivity {
 
     @OnClick(R.id.change_password_container)
     public void onChangePwdClick() {
@@ -52,10 +42,7 @@ public class SettingsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         ButterKnife.bind(this);
-
-        mTitleText.setText(R.string.settings);
     }
 
     @Override
@@ -70,5 +57,10 @@ public class SettingsActivity extends BaseActivity {
             default:
                 break;
         }
+    }
+
+    @Override
+    protected int getTitleResourceId() {
+        return R.string.settings;
     }
 }

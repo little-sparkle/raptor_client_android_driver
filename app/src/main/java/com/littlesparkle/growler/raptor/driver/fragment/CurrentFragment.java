@@ -77,7 +77,7 @@ public class CurrentFragment extends Fragment {
                 mDriver = driverInfoResponse.data.driver;
                 updateView();
             }
-        }, mUser.user_id, mUser.token);
+        }, mUser.user_id, mUser.user_id, mUser.token);
     }
 
     private void initData() {

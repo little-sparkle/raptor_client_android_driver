@@ -7,7 +7,7 @@
 
     <include
         android:id="@+id/title_bar"
-        layout="@layout/title_bar"
+        layout="@layout/base_title_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_bar_height"
         android:layout_alignParentTop="true" />
@@ -28,7 +28,7 @@
                 android:id="@+id/change_password_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/md_blue_grey_300"
+                android:background="@color/md_white_1000"
                 android:gravity="center_vertical"
                 android:padding="@dimen/padding_normal">
 
@@ -40,7 +40,6 @@
                     android:gravity="center_vertical|left"
                     android:padding="@dimen/padding_normal"
                     android:text="@string/change_password"
-                    android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_primary" />
 
                 <android.support.v7.widget.AppCompatImageView
@@ -55,7 +54,7 @@
                 android:id="@+id/update_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/md_blue_grey_300"
+                android:background="@color/md_white_1000"
                 android:gravity="center_vertical"
                 android:padding="@dimen/padding_normal">
 
@@ -67,7 +66,6 @@
                     android:gravity="center_vertical|left"
                     android:padding="@dimen/padding_normal"
                     android:text="@string/check_update"
-                    android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_primary" />
 
                 <android.support.v7.widget.AppCompatImageView
@@ -82,7 +80,7 @@
                 android:id="@+id/feedback_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/md_blue_grey_300"
+                android:background="@color/md_white_1000"
                 android:gravity="center_vertical"
                 android:padding="@dimen/padding_normal">
 
@@ -94,7 +92,6 @@
                     android:gravity="center_vertical|left"
                     android:padding="@dimen/padding_normal"
                     android:text="@string/feedback"
-                    android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_primary" />
 
                 <android.support.v7.widget.AppCompatImageView
@@ -107,7 +104,7 @@
                 android:id="@+id/contact_us_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/md_blue_grey_300"
+                android:background="@color/md_white_1000"
                 android:gravity="center_vertical"
                 android:padding="@dimen/padding_normal">
 
@@ -119,7 +116,6 @@
                     android:gravity="center_vertical|left"
                     android:padding="@dimen/padding_normal"
                     android:text="@string/contact_us"
-                    android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_primary" />
 
                 <android.support.v7.widget.AppCompatImageView
@@ -132,7 +128,7 @@
                 android:id="@+id/about_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/md_blue_grey_300"
+                android:background="@color/md_white_1000"
                 android:gravity="center_vertical"
                 android:padding="@dimen/padding_normal">
 
@@ -144,7 +140,6 @@
                     android:gravity="center_vertical|left"
                     android:padding="@dimen/padding_normal"
                     android:text="@string/about"
-                    android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_primary" />
 
                 <android.support.v7.widget.AppCompatImageView
@@ -159,7 +154,7 @@
                 android:id="@+id/quit_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/md_blue_grey_300"
+                android:background="@color/md_white_1000"
                 android:gravity="center_vertical"
                 android:padding="@dimen/padding_normal">
 
@@ -170,7 +165,6 @@
                     android:gravity="center_vertical|left"
                     android:padding="@dimen/padding_normal"
                     android:text="@string/quit"
-                    android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_primary" />
             </LinearLayout>
         </LinearLayout>
