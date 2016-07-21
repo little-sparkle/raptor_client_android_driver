@@ -8,12 +8,17 @@ import android.support.v7.widget.AppCompatButton;
 import com.amap.api.maps2d.model.LatLng;
 import com.littlesparkle.growler.library.activity.BaseActivity;
 import com.littlesparkle.growler.library.dialog.DialogHelper;
+import com.littlesparkle.growler.library.log.Logger;
 import com.littlesparkle.growler.raptor.driver.R;
+import com.littlesparkle.growler.raptor.driver.activity.event.SignOutEvent;
 import com.littlesparkle.growler.raptor.driver.fragment.CurrentFragment;
 import com.littlesparkle.growler.raptor.driver.fragment.MeFragment;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -70,6 +75,19 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe
+    public void onSignOutEvent(SignOutEvent event) {
+        Logger.log("received signout event");
+        finish();
     }
 
     @Override

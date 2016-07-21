@@ -1,6 +1,7 @@
 package com.littlesparkle.growler.raptor.driver.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.Toast;
 
 import com.littlesparkle.growler.library.activity.BaseLoginActivity;
@@ -9,12 +10,18 @@ import com.littlesparkle.growler.library.dialog.DialogHelper;
 import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
 import com.littlesparkle.growler.library.log.Logger;
 import com.littlesparkle.growler.library.misc.MiscHelper;
+import com.littlesparkle.growler.library.user.UserManager;
 import com.littlesparkle.growler.library.user.UserRequest;
 import com.littlesparkle.growler.library.user.UserSignInResponse;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.activity.web.ApplyDriverActivity;
 
 public class LoginActivity extends BaseLoginActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     @Override
     protected void onRegisterClick() {
         startActivity(new Intent(this, RegisterActivity.class));
@@ -51,7 +58,7 @@ public class LoginActivity extends BaseLoginActivity {
             public void onNext(UserSignInResponse driverSignInResponse) {
                 User user = driverSignInResponse.data.user;
                 user.persist(LoginActivity.this);
-
+                UserManager.signIn(LoginActivity.this);
                 Logger.log("driver signin : " + driverSignInResponse);
                 if (user.is_driver == 1 && user.verified == 1) {
                     startMainActivity(user);
@@ -62,7 +69,6 @@ public class LoginActivity extends BaseLoginActivity {
                         Toast.makeText(LoginActivity.this, R.string.application_is_under_verifying, Toast.LENGTH_SHORT)
                                 .show();
                     } else {
-
                     }
                 }
             }
