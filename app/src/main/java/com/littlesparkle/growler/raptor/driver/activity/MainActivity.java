@@ -7,8 +7,11 @@ import android.support.v7.widget.AppCompatButton;
 
 import com.amap.api.maps2d.model.LatLng;
 import com.littlesparkle.growler.library.activity.BaseActivity;
-import com.littlesparkle.growler.library.dialog.DialogHelper;
+import com.littlesparkle.growler.library.bean.User;
+import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
+import com.littlesparkle.growler.library.http.DefaultResponse;
 import com.littlesparkle.growler.library.log.Logger;
+import com.littlesparkle.growler.library.user.driver.DriverRequest;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.activity.event.SignOutEvent;
 import com.littlesparkle.growler.raptor.driver.fragment.CurrentFragment;
@@ -47,7 +50,11 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.order_mode)
     public void onOrderModeClick(AppCompatButton button) {
-        DialogHelper.showDialogWithMessage(this, getString(R.string.order_mode));
+        new DriverRequest().online(new BaseHttpSubscriber<DefaultResponse>(this, this) {
+            @Override
+            public void onNext(DefaultResponse defaultResponse) {
+            }
+        }, mUser.user_id, mUser.token);
     }
 
     @BindView(R.id.shutdown_mode)
@@ -55,7 +62,11 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.shutdown_mode)
     public void onShutDownModeClick(AppCompatButton button) {
-        DialogHelper.showDialogWithMessage(this, getString(R.string.shutdown_mode));
+        new DriverRequest().offline(new BaseHttpSubscriber<DefaultResponse>(this, this) {
+            @Override
+            public void onNext(DefaultResponse defaultResponse) {
+            }
+        }, mUser.user_id, mUser.token);
     }
 
     ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -113,8 +124,19 @@ public class MainActivity extends BaseActivity {
         mSmartTabLayout.setOnPageChangeListener(mOnPageChangeListener);
     }
 
+    private User mUser;
+
     @Override
     protected void initData() {
         super.initData();
+
+        Intent it = getIntent();
+        if (it != null) {
+            mUser = it.getParcelableExtra("user");
+            if (mUser == null) {
+                mUser = new User();
+                mUser.load(this);
+            }
+        }
     }
 }
