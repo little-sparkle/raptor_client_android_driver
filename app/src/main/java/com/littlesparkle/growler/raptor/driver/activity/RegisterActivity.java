@@ -10,6 +10,7 @@ import com.littlesparkle.growler.library.misc.MiscHelper;
 import com.littlesparkle.growler.library.user.UserRequest;
 import com.littlesparkle.growler.library.user.UserSignUpResponse;
 import com.littlesparkle.growler.raptor.driver.R;
+import com.littlesparkle.growler.raptor.driver.activity.web.ApplyDriverActivity;
 import com.littlesparkle.growler.raptor.driver.backend.Api;
 
 public class RegisterActivity extends BaseRegisterActivity {

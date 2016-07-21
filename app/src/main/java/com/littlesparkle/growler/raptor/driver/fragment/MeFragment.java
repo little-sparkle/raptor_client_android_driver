@@ -8,10 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.littlesparkle.growler.library.dialog.DialogHelper;
+import com.littlesparkle.growler.library.bean.User;
+import com.littlesparkle.growler.library.log.Logger;
 import com.littlesparkle.growler.library.webview.WebViewActivity;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.activity.SettingsActivity;
+import com.littlesparkle.growler.raptor.driver.backend.Api;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -37,9 +39,22 @@ public class MeFragment extends Fragment {
         onViewClick(view);
     }
 
+    private User mUser;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        Intent it = getActivity().getIntent();
+        if (it != null) {
+            mUser = it.getParcelableExtra("user");
+            if (mUser == null) {
+                Logger.e("null user retrieved!");
+                return null;
+            } else {
+                Logger.log("retrieved user:");
+                mUser.dump();
+            }
+        }
         return inflater.inflate(R.layout.fragment_me, container, false);
     }
 
@@ -50,24 +65,44 @@ public class MeFragment extends Fragment {
     }
 
     private void onViewClick(View view) {
+        Intent it = null;
         switch (view.getId()) {
             case R.id.wallet_container:
-                Intent it = new Intent(getContext(), WebViewActivity.class);
+                it = new Intent(getContext(), WebViewActivity.class);
                 it.putExtra("title", getString(R.string.wallet));
-                it.putExtra("url", "file:///android_asset/index.html");
-                startActivity(it);
+                it.putExtra("url", Api.WALLET);
+                if (mUser != null) {
+                    it.putExtra("user_id", mUser.user_id);
+                    it.putExtra("token", mUser.token);
+                }
                 break;
             case R.id.message_container:
-                DialogHelper.showDialogWithMessage(getContext(), getString(R.string.message_center));
+                it = new Intent(getContext(), WebViewActivity.class);
+                it.putExtra("title", getString(R.string.message_center));
+                it.putExtra("url", Api.MESSAGE_CENTER);
+                if (mUser != null) {
+                    it.putExtra("user_id", mUser.user_id);
+                    it.putExtra("token", mUser.token);
+                }
                 break;
             case R.id.my_car_container:
-                DialogHelper.showDialogWithMessage(getContext(), getString(R.string.my_car));
+                it = new Intent(getContext(), WebViewActivity.class);
+                it.putExtra("title", getString(R.string.my_car));
+                it.putExtra("url", Api.MY_CAR);
+                if (mUser != null) {
+                    it.putExtra("user_id", mUser.user_id);
+                    it.putExtra("token", mUser.token);
+                }
                 break;
             case R.id.settings_container:
-                startActivity(new Intent(getContext(), SettingsActivity.class));
+                it = new Intent(getContext(), SettingsActivity.class);
+                it.putExtra("user", mUser);
                 break;
             default:
                 break;
+        }
+        if (it != null) {
+            startActivity(it);
         }
     }
 }
