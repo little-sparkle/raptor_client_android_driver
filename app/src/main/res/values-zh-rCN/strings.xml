@@ -30,11 +30,13 @@
     <string name="bargain_rate_label">成交率</string>
     <string name="rating_label">评价星级</string>
 
+    <string name="personal_information">个人信息</string>
     <string name="my_route_label">我的行程</string>
     <string name="wallet">钱包</string>
     <string name="message_center">消息中心</string>
     <string name="my_car">我的车辆</string>
     <string name="settings">设置</string>
+    <string name="driver">司机</string>
 
     <string name="change_password">修改密码</string>
     <string name="illegal_mobile">请检查手机号</string>

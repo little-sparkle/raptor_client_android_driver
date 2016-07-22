@@ -30,11 +30,13 @@
     <string name="bargain_rate_label">bargain rate</string>
     <string name="rating_label">rating</string>
 
+    <string name="personal_information">personal information</string>
     <string name="my_route_label">my route</string>
     <string name="wallet">wallet</string>
     <string name="message_center">message_center</string>
     <string name="my_car">my car</string>
     <string name="settings">settings</string>
+    <string name="driver">driver</string>
 
     <string name="change_password">change password</string>
     <string name="illegal_mobile">illegal mobile</string>

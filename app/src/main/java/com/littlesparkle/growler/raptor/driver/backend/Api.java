@@ -6,4 +6,7 @@ public class Api {
     public static final String WALLET = UNDER_DEVELOPING;
     public static final String MESSAGE_CENTER = UNDER_DEVELOPING;
     public static final String MY_CAR = UNDER_DEVELOPING;
+    public static final String PERFORMANCE_REVIEW = UNDER_DEVELOPING;
+    public static final String PERSONAL_INFORMATION = UNDER_DEVELOPING;
+    public static final String MY_ROUTE = UNDER_DEVELOPING;
 }
