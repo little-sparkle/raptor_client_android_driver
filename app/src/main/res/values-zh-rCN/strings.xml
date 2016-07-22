@@ -11,11 +11,13 @@
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
 
-    <string name="online_hours">在线:%1$s小时</string>
-    <string name="order_count">接单:%1$d</string>
+    <string name="online_hours">在线:</string>
+    <string name="hours">小时</string>
+    <string name="order_count">接单:</string>
     <string name="sum">流水:%1$s</string>
     <string name="bargain_rate">成交率:%1$d%%</string>
 
+    <string name="reservation_route">预约行程</string>
     <string name="current_route">当前行程</string>
     <string name="current_route_listening">听单中</string>
     <string name="current_route_ongoing">进行中</string>

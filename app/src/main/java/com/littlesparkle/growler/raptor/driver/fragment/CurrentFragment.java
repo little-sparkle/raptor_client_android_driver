@@ -18,8 +18,6 @@ import com.littlesparkle.growler.library.user.driver.DriverInfoResponse;
 import com.littlesparkle.growler.library.user.driver.DriverRequest;
 import com.littlesparkle.growler.raptor.driver.R;
 
-import java.text.DecimalFormat;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -29,12 +27,6 @@ public class CurrentFragment extends Fragment {
 
     @BindView(R.id.order_count)
     TextView mOrderCount;
-
-    @BindView(R.id.sum)
-    TextView mSum;
-
-    @BindView(R.id.bargain_rate)
-    TextView mBargainRate;
 
     private User mUser;
 
@@ -81,21 +73,11 @@ public class CurrentFragment extends Fragment {
     }
 
     private void initData() {
-        mOnlineHours.setText(String.format(getString(R.string.online_hours), new DecimalFormat(".0").format(0)));
-        mOrderCount.setText(String.format(getString(R.string.order_count), 0));
-        mSum.setText(String.format(getString(R.string.sum), new DecimalFormat(".0").format(0)));
-        mBargainRate.setText(String.format(getString(R.string.bargain_rate), 0));
     }
 
     private void updateView() {
         if (mDriver != null) {
-            mOrderCount.setText(String.format(getString(R.string.order_count), mDriver.order_count));
-            if (mDriver.order_count != 0) {
-                mBargainRate.setText(String.format(getString(R.string.bargain_rate),
-                        (mDriver.order_success_count * 100) / mDriver.order_count));
-            } else {
-                mBargainRate.setText(String.format(getString(R.string.bargain_rate), 0));
-            }
+            mOrderCount.setText(mDriver.order_count);
         }
     }
 }

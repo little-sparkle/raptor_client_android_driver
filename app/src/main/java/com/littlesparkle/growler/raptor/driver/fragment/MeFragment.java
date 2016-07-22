@@ -15,6 +15,7 @@ import com.littlesparkle.growler.library.log.Logger;
 import com.littlesparkle.growler.library.webview.WebViewActivity;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.activity.SettingsActivity;
+import com.littlesparkle.growler.raptor.driver.activity.web.WalletActivity;
 import com.littlesparkle.growler.raptor.driver.backend.Api;
 
 import butterknife.BindView;
@@ -100,7 +101,7 @@ public class MeFragment extends Fragment {
         switch (view.getId()) {
             case R.id.wallet_container:
                 it = createWebViewIntent(getString(R.string.wallet),
-                        Api.WALLET);
+                        Api.WALLET, WalletActivity.class);
                 break;
             case R.id.message_container:
                 it = createWebViewIntent(getString(R.string.message_center),
@@ -136,7 +137,14 @@ public class MeFragment extends Fragment {
     }
 
     private Intent createWebViewIntent(@NonNull String title, @NonNull String url) {
-        Intent it = new Intent(getContext(), WebViewActivity.class);
+        return createWebViewIntent(title, url, null);
+    }
+
+    private Intent createWebViewIntent(@NonNull String title, @NonNull String url, Class cls) {
+        if (cls == null) {
+            cls = WebViewActivity.class;
+        }
+        Intent it = new Intent(getContext(), cls);
         it.putExtra("title", title);
         it.putExtra("url", url);
         if (mUser != null) {

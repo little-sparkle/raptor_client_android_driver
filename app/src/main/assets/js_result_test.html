@@ -37,7 +37,8 @@
   function sendInfoToJava(){
     //调用android程序中的方法，并传递参数
     var name = document.getElementById("name_input").value;
-    window.WebViewResultInterface.onSuccess(name);
+    window.WebViewResultInterface.onJsResult(0, name);
+    window.WebViewResultInterface.onJsResult(1, name);
   }
 
   //在android代码中调用此方法
