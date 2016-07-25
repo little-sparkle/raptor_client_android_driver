@@ -98,6 +98,7 @@ public class MainActivity extends BaseActivity {
     @Subscribe
     public void onSignOutEvent(SignOutEvent event) {
         Logger.log("received signout event");
+        startActivity(new Intent(this, LoginActivity.class));
         finish();
     }
 

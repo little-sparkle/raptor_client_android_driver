@@ -24,11 +24,6 @@ public class RegisterActivity extends BaseRegisterActivity {
 
         new UserRequest().signupSendSms(new BaseHttpSubscriber<DefaultResponse>(this, this) {
             @Override
-            protected void onError(String message) {
-                super.onError(message);
-            }
-
-            @Override
             public void onNext(DefaultResponse defaultResponse) {
             }
         }, phoneNumber);

@@ -13,10 +13,16 @@ import com.littlesparkle.growler.library.activity.BaseActivity;
 import com.littlesparkle.growler.library.bean.Driver;
 import com.littlesparkle.growler.library.bean.User;
 import com.littlesparkle.growler.library.http.BaseHttpSubscriber;
+import com.littlesparkle.growler.library.http.ErrorResponse;
+import com.littlesparkle.growler.library.http.api.Api;
 import com.littlesparkle.growler.library.log.Logger;
+import com.littlesparkle.growler.library.user.UserManager;
 import com.littlesparkle.growler.library.user.driver.DriverInfoResponse;
 import com.littlesparkle.growler.library.user.driver.DriverRequest;
 import com.littlesparkle.growler.raptor.driver.R;
+import com.littlesparkle.growler.raptor.driver.activity.event.SignOutEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -63,6 +69,16 @@ public class CurrentFragment extends Fragment {
         Logger.log("get driver info: id = " + mUser.user_id + ", token = " + mUser.token);
         new DriverRequest().getDriverInfo(new BaseHttpSubscriber<DriverInfoResponse>(
                 (BaseActivity) getActivity(), (BaseActivity) getActivity()) {
+            @Override
+            protected void onError(ErrorResponse error) {
+                super.onError(error);
+
+                if (Api.needReSignIn(error.data.err_no)) {
+                    UserManager.signOut(getActivity());
+                    EventBus.getDefault().post(new SignOutEvent());
+                }
+            }
+
             @Override
             public void onNext(DriverInfoResponse driverInfoResponse) {
                 Logger.log("#######", driverInfoResponse.toString());
