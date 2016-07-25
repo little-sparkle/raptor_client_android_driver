@@ -11,8 +11,10 @@ import com.littlesparkle.growler.library.http.DefaultResponse;
 import com.littlesparkle.growler.library.log.Logger;
 import com.littlesparkle.growler.library.user.UserManager;
 import com.littlesparkle.growler.library.user.UserRequest;
+import com.littlesparkle.growler.library.webview.WebViewActivity;
 import com.littlesparkle.growler.raptor.driver.R;
 import com.littlesparkle.growler.raptor.driver.activity.event.SignOutEvent;
+import com.littlesparkle.growler.raptor.driver.backend.Api;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -20,9 +22,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SettingsActivity extends BaseTitleBarActivity {
+    private User mUser;
 
     @OnClick(R.id.change_password_container)
     public void onChangePwdClick() {
+        startActivity(new Intent(this, ResetPwdActivity.class));
     }
 
     @OnClick(R.id.update_container)
@@ -60,8 +64,6 @@ public class SettingsActivity extends BaseTitleBarActivity {
         }, mUser.user_id, mUser.token);
     }
 
-    private User mUser;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,12 +87,24 @@ public class SettingsActivity extends BaseTitleBarActivity {
     }
 
     private void onWebItemClick(View view) {
+        Intent it = new Intent(this, WebViewActivity.class);
         switch (view.getId()) {
-            case R.id.wallet_container:
+            case R.id.feedback_container:
+                it.putExtra("title", R.string.feedback);
+                it.putExtra("url", Api.FEEDBACK);
+                break;
+            case R.id.contact_us_container:
+                it.putExtra("title", R.string.contact_us);
+                it.putExtra("url", Api.CONTACT_US);
+                break;
+            case R.id.about_container:
+                it.putExtra("title", R.string.about);
+                it.putExtra("url", Api.ABOUT);
                 break;
             default:
                 break;
         }
+        startActivity(it);
     }
 
     @Override

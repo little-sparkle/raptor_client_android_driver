@@ -9,4 +9,7 @@ public class Api {
     public static final String PERFORMANCE_REVIEW = UNDER_DEVELOPING;
     public static final String PERSONAL_INFORMATION = UNDER_DEVELOPING;
     public static final String MY_ROUTE = UNDER_DEVELOPING;
+    public static final String FEEDBACK = UNDER_DEVELOPING;
+    public static final String CONTACT_US = UNDER_DEVELOPING;
+    public static final String ABOUT = UNDER_DEVELOPING;
 }
